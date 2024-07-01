@@ -1,15 +1,5 @@
 import { CircleUser, Menu, Package2, Search } from "lucide-react"
-
 import { Button } from "@/components/ui/button"
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
-import { Checkbox } from "@/components/ui/checkbox"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -18,27 +8,44 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import { Input } from "@/components/ui/input"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { Outlet } from "react-router-dom";
 
 function SharedLayout() {
   return (
     <div className="flex min-h-screen w-full flex-col">
-      <header className="sticky top-0 flex h-16 items-center gap-4 border-b bg-background px-4 md:px-6 justify-between">
+      <header className="sticky top-0 flex h-16 items-center gap-4 border-b bg-orange-500 px-4 md:px-6 justify-between">
         <nav className="hidden flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
           <a
             href="#"
             className="flex items-center gap-2 text-lg font-semibold md:text-base"
           >
             <Package2 className="h-6 w-6" />
-            <span className="sr-only">Acme Inc</span>
+            <span className="sr-only">Fanta Fans</span>
           </a>
           <a
             href="#"
-            className="text-muted-foreground transition-colors hover:text-foreground"
+            className="text-white transition-colors hover:text-gray-200"
           >
             Home
+          </a>
+          <a
+            href="#about"
+            className="text-white transition-colors hover:text-gray-200"
+          >
+            About
+          </a>
+          <a
+            href="#products"
+            className="text-white transition-colors hover:text-gray-200"
+          >
+            Products
+          </a>
+          <a
+            href="#contact"
+            className="text-white transition-colors hover:text-gray-200"
+          >
+            Contact
           </a>
         </nav>
         <Sheet>
@@ -59,13 +66,31 @@ function SharedLayout() {
                 className="flex items-center gap-2 text-lg font-semibold"
               >
                 <Package2 className="h-6 w-6" />
-                <span className="sr-only">Acme Inc</span>
+                <span className="sr-only">Fanta Fans</span>
               </a>
               <a
                 href="#"
-                className="text-muted-foreground hover:text-foreground"
+                className="text-white hover:text-gray-200"
               >
                 Home
+              </a>
+              <a
+                href="#about"
+                className="text-white hover:text-gray-200"
+              >
+                About
+              </a>
+              <a
+                href="#products"
+                className="text-white hover:text-gray-200"
+              >
+                Products
+              </a>
+              <a
+                href="#contact"
+                className="text-white hover:text-gray-200"
+              >
+                Contact
               </a>
             </nav>
           </SheetContent>
@@ -89,7 +114,7 @@ function SharedLayout() {
           </DropdownMenu>
         </div>
       </header>
-      <main className="flex flex-1">
+      <main className="flex flex-1 flex-col items-center bg-orange-100">
         <Outlet />
       </main>
     </div>
